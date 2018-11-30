@@ -1,1 +1,160 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lusase page</title>
+    <style>
+        .box {
+            position: absolute;
+            top: 40%;
+            left: 500px;
+            margin-top: -150px;
+            transition: transfrom .6s;
+            -webkit-transition: transfrom .6s;
+        }
+        .dice{
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(-80deg);
+            transform-origin: 50% 50% 0;
+            animation: rotate 20s infinite;
+        }
+        .surface {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: #666666;
+            opacity: .5;
+            font-size: 60px;
+            text-align: center;
+            line-height: 300px;
+            font-weight: bold;
+            color: #ffffff;
+            border: 1px solid #ccc;
+            transition: all .3s;
+            -webkit-transition: all .3s;
+        }
+        .surface img {
+            width: 100%;
+            height: 100%;
+        }
+        .dice:hover .front {
+            transform: rotateY(0) translateZ(100px);
+        }
+        .dice:hover .back {
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+        .dice:hover .left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .dice:hover .right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .dice:hover .top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .dice:hover .bottom {
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+        .dice .front {
+            transform: rotateY(0) translateZ(150px);
+        }
+
+        .dice .back {
+            transform: translateZ(-150px) rotateY(180deg);
+        }
+
+        .dice .left {
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+
+        .dice .right {
+            transform: rotateY(90deg) translateZ(150px);
+        }
+
+        .dice .top {
+            transform: rotateX(90deg) translateZ(150px);
+        }
+
+        .dice .bottom {
+            transform: rotateX(90deg) translateZ(-150px);
+        }
+
+        @-webkit-keyframes rotate {
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        .face-in {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            background: aqua;
+            opacity: .6;
+            text-align: center;
+            line-height: 100px;
+        }
+        .face-in img {
+            width: 100px;
+            height: 100px;
+        }
+        .front-in {
+            transform: rotateY(0deg) translateZ(50px);
+        }
+
+        .back-in {
+            transform: rotateY(180deg) translateZ(50px);
+        }
+
+        .left-in {
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .right-in {
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .top-in {
+            transform: rotateX(90deg) translateZ(-50px);
+        }
+
+        .bottom-in {
+            transform: rotateX(-90deg) translateZ(-50px);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="dice">
+        <div class="surface front ">1</div>
+        <div class="surface left">2</div>
+        <div class="surface right">3</div>
+        <div class="surface bottom">4</div>
+        <div class="surface top">5</div>
+        <div class="surface back">6</div>
+
+        <div class="face-in front-in ">7</div>
+        <div class="face-in left-in">8</div>
+        <div class="face-in right-in">9</div>
+        <div class="face-in bottom-in">10</div>
+        <div class="face-in top-in">11</div>
+        <div class="face-in back-in">12</div>
+    </div>
+</div>
+
+</body>
+</html>
