@@ -3,6 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>lusase page</title>
+    <script>
+      var parseUrlParams = function (params) {
+        if(!params) return {};
+        var arr = params.replace(/^\?/, '').split('&'),
+          len = arr.length,
+          obj = {},
+          tmp,
+          i;
+        for (i = 0; i < len; i++) {
+          tmp = arr[i].split('=');
+          obj[tmp[0]] = decodeURIComponent(tmp[1]);
+        }
+        return obj;
+      }
+
+      var params = parseUrlParams(location.search)
+      if (params && params.url) {
+        location.href = params.url
+      }
+    </script>
     <style>
         .box {
             position: absolute;
@@ -155,6 +175,5 @@
         <div class="face-in back-in">12</div>
     </div>
 </div>
-
 </body>
 </html>
